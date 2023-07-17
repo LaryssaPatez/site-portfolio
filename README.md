@@ -3,7 +3,7 @@
 </h1>
 
 <p align="left">
-    <img width=150 src="https://img.shields.io/badge/STATUS-EM_DESENVOLVIMENTO-GREEN"/>
+    <img width=150 src="https://github.com/LaryssaPatez/site-portfolio/assets/132311199/a980843e-d288-45be-ab25-47ac503c10c5"/>
 </p>
 
 <p align="center">
