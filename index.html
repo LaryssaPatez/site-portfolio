@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge"> <!--Essa é uma configuração para o Edge, para que ele sempre utilize a versão mais recente nesse navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--abre a escala da nossa página baseado no tamanho do dispositivo que está acessando-->
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css"> <!--colocamos essa tag após criar nosso arquivo css para linkar/adicionar as estilizações. 
+    
+        Rel: indica qual o tipo do arquivo. 
+        
+        Href: serve para puxar  arquivo e anexar ali-->
+<body>
+</head>
+    <header class="cabecalho"> <!--cabeçalho/menu do site-->
+        <nav class="cabecalho__menu"> <!-- NAV tag para inserir links que podemos navegar na página-->
+        <a class="cabecalho__menu__link" href="index.html">Home</a>
+        <a class="cabecalho__menu__link" href="projects.html">Projetos</a>
+        <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+        </nav>
+    
+    </header> 
+
+    <main class="apresentacao"><!--titulo, parágrafos, botões..-->
+        <section class="apresentacao__conteudo"> <!--indica que isso aqui é uma parte (para alinhar)-->
+                <h1 class="apresentacao__conteudo__titulo">Olá, eu sou a 
+                    <br>
+                    <a href="about.html"><strong class="nome-destaque">Laryssa</strong></a>
+                    <br>
+                    estudante de desenvolvimento web
+                </h1>
+                <div> 
+                <p class="apresentacao__conteudo__texto">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque nemo reprehenderit magni? Saepe, delectus sapiente.
+                    <br>
+                    llo cum hic eaque reiciendis fuga veritatis quae ex llo cum hic eaque reiciendis Veritatis.
+                </p>
+                </div>
+                <div class="apresentacao__links">
+                    <h2 class="apresentacao__links__subtitulo">Acesse minhas redes:</h2>
+                    
+                    <a href="https://www.linkedin.com/in/laryssa-patez-da-silva-6504a0199/" class="apresentacao__links__botoes" target="_blank"> 
+                        <img src="assets/linkedin purple.png" alt="Ícone Linkedin">
+                        Linkedin
+                    </a>
+        
+                    <a href="https://github.com/LaryssaPatez" class="apresentacao__links__botoes" target="_blank">
+                    <img src="assets/github purple.png" alt="Icone Github"> GitHub</a>  <!--a tag HREF indica que iremos colocar um site e o usuário é direcionado a página ao clicar-->
+
+                    <!--<a href="arquivos/Currículo.pdf"
+                    class="apresentacao__links__botoes">
+                    <img src="c:\Users\larys\OneDrive\Área de Trabalho\estudos\alura\front-end\html - css\2º Organize sua página e deixe-a responsiva para diferentes telas\ex002\assets\graduacao purple.png" alt="Icone curriculo"
+                    > Meu currículo</a> <!--a tag A indica que o texto é um botão-->
+                    <!--OBS: Aprender a colocar um botão que encaminhe o botao para outra pagina visualizando o curriculo-->
+                </div>
+        </section>
+        <div class="apresentacao__imagem">
+            <img src="assets/imagem eu.png"class="imagem">
+        </div>
+    </main> 
+
+    <footer> <!--rodapé da página-->
+        <p class="nome_rodape">Desenvolvido por Laryssa Patez.</p>
+    </footer> 
+</body>
+</html>

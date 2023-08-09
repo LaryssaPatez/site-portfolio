@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Space+Grotesk:wght@300&family=VT323&display=swap');
+
+:root {
+    --cor-principal: #6807F9;
+    --cor-fundo: #111111;
+    --cor-selecao1: #FF06B7;
+    --cor-selecao2: #191919;
+    --cor-letra: aliceblue;
+
+    --fonte-titulo: 'VT323', monospace; 
+    --fonte-texto: 'Space Grotesk', sans-serif;
+    --fonte-botao: 'Krona One', sans-serif;
+}
+
+/*AGORA DESCEMOS NESSE CÓDIGO STYLES.CSS E ALTERAMOS AS CORES PARA A PROPRIEDADE VAR E O NOME DA VARIÁVEL QUE DEFINIMOS. 
+
+
+abaixo temos um comando de RESET CSS, retirando margin e padding da página*/
+*{  /*o asterisco serve para selecionar todas os elementos da página*/
+    margin: 0;
+    padding: 0;
+    text-decoration: none; /*retira todos os hyperlinks da página (coloquei aqui pq não consegui achar outra linha que retirava o hyperlink do nome-destaque*/
+}
+
+
+/* obs: precisamos linkar o CSS no index.html para que as estilizações sejam aplicadas, essa tag fica na <head> (retorna para ver)*/
+
+body { /*isso é um seletor, ou seja, puxamos a tag que queremos alterar a cor
+
+esse seletor é do body do site
+*/
+    /*height: 100vh; ->indica que o site deverá ocupar 100% da tela*/
+    box-sizing: border-box; /*utilizando essa tag, as imagens sempre estarão dentro do body, ou seja, os elemntos filhos sempre ficarão dentro do elemnto pai*/
+    background-color: var(--cor-fundo); 
+    color: var(--cor-letra); /*cor da letra*/
+}
+
+/*Observe que o seletor altera a cor de tudo o que está dentro daquela tag. 
+
+Então, se queremos alterar somente a cor um texto específico, precisamos criar uma class (classe) e determinar qual class é aquela tag.
+
+É tipo dar um nome para aquela tag específica e depois puxar aqui para o CSS. 
+
+Volta lá no index.html para dar uma olhada na class da tag <strong>
+
+Agora dá uma olhadinha na linha 21, o seletor é puxado com um . + nome da classe.
+
+É dessa forma que dizemos para o CSS que isso é uma classe e não uma tag. Somente aquela classe será alterada.
+*/
+
+/*Agora vamos estilizar nosso cabeçalho*/
+
+.cabecalho {
+    margin: 1em 0.5em 0 0.5em;
+}
+.cabecalho__menu__link{
+    color: var(--cor-principal);
+    font-family: var(--fonte-texto);
+    font-weight: 600;    
+}
+
+
+/*Abaixo o espaçamento do menu:
+*/
+.cabecalho__menu {
+    padding: 2% 0 0 15%; /*preenchimento SUPERIOR// preenchimento DIREITO// preenchimento INFERIOR// preenchiemento ESQUERDO*/
+    display: flex;
+    gap: 90px
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-selecao1);
+}
+
+.nome-destaque {
+    color: var(--cor-principal);
+    padding: 0px 0px;
+}
+
+/*Agora nós vamos posicionar os elementos corretamente na página, para isso vamos utilizar as Flexbox.
+
+De ínicio, temos que adicionar uma class na tag pai (onde está todo o conteúdo que queremos posicionar), em nosso site, esse elemento é o <main>, depois colocamos o seletor da class aqui no CSS e adicionamos a propriedade display: flex.
+
+Dá uma olhada na linha 46 ;)
+
+*/
+
+.apresentacao {
+    display: flex; /*alinha os elementos um na frente do outro*/
+    align-items: center; /*alinha os elementos no centro*/
+    justify-content: space-between; /*espaça os elementos, no caso temos 2 elementos nessa class*/
+    padding: 2% 15%;
+    gap: 82px; /*espaçamento entre texto e imagem*/
+    /*margin: 10%; margem de todos os elementos dentro da class*/
+    margin: 1em 0.5em 0 0.5em;
+}
+
+.apresentacao__conteudo {
+    width: 50%; /*tamanho da box resonsiva por está em %, i*/
+    display: flex; /*add flexblox, elementos um na frente do outro*/
+    flex-direction: column; /*para que os elementos fiquem em colunas na horizontal*/
+    gap: 20px; /*espaçamento entre o titulo, texto e botoes */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 3.75rem;
+    font-family: var(--fonte-titulo); /*aplicando a fonte dessa class*/ 
+}
+    
+.apresentacao__conteudo__texto { 
+    width: 90%; /*tamanho da box*/
+    font-size: 1.25rem;
+    font-family: var(--fonte-texto);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.imagem {
+    width: 70%;
+    margin: 0 0 4em 0;
+}
+
+/*Agora vamos posicionar os botões criando uma <div> lá no index.html e puxar uma class*/
+
+.apresentacao__links {
+    display: flex; /*para adicionar a flexblox e os espaçamentos entre os dois botões*/
+    justify-content: space-between; /*propriedade que separa os dois botões lado a lado*/
+    flex-direction: column; /*texto e um botao abaixo do outro*/
+    align-items: center; /*centraliza o texto e elemento*/
+}
+
+/*E estilizar esses botões também:
+
+*/
+
+.apresentacao__links__botoes {
+    display: flex; /*linha os botoes um na frente do outro*/
+    justify-content: center; /*centraliza icone + texto botoes*/
+    gap: 4px; /*espaçamento entre icone e texto botoes*/
+    font-size: 1.25rem;
+    font-family: var(--fonte-texto);
+    /* background-color: #865DFF; */
+    margin: 6px; /*espaçamento entre os dois botões*/
+    color: var(--cor-letra);
+    width: 54%; /*medidas retiradas do figma*/
+    text-align: center;  /*centralizando os botoes na box*/
+    border: 3px outset var(--cor-principal); /*espessura da borda + estilo + cor*/
+    border-radius: 10px;  /*arredondamento das bordas*/
+    padding: 1em 0.5em; /*dimensões do bota0 // 1ºvalor = vertical   2ºvalor = horizontal*/
+    text-decoration: none; /*retira o sublinhado do hyperlink*/
+}
+
+/*Hover é uma propriedade que adiciona alterações visuais quando o usuário passa o mouse naquele local.*/
+
+.apresentacao__links__botoes:hover {
+    /* background-color: #191825; */
+    background-color: var(--cor-selecao2);
+    padding: 1.2em 0.7em; /*botao aumenta*/
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-titulo);
+    font-size: 2.25rem;
+}
+
+.nome-destaque:hover{
+    color: var(--cor-selecao1);
+}
+
+.apresentacao__project{
+    margin: 3em 0 1.5em 15em;
+}
+
+.apresentacao__card__project {
+    display: flex;
+    flex-direction: column;
+    justify-content center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--fonte-texto);
+    color: var(--cor-letra);
+    gap: 1.3%;    
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389); /*direita, baixo e blur*/
+    background-color: var(--cor-principal);
+    border: 0px solid var(--cor-principal);
+    border-radius: 10px;
+    width: 11.3em;
+    height: 7em;
+    padding: 0.2em 0.1em 0.1em 0.1em;
+    overflow: hidden; /*faz com que o texto que está fora do botao apareça somente quando passar o mouse*/
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper__card {
+    display: flex; /*para que fique um do lado do outro*/
+    gap: 2em;
+    margin-top: 1em;
+    font-family: var(--fonte-botao);
+    
+}
+
+.card__imagem {
+    border-radius: 8px;
+}
+
+.card__titulo{
+    font-size: 20px;
+}
+
+.apresentacao__card__project:hover {
+    width: 11.3em;
+    height: 17em;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+}
+
+.nome_rodape{
+    background-color: var(--cor-principal);
+    color: var(--cor-letra);
+    font-family: var(--fonte-texto);
+    font-weight: 400; /*aumentando a espessura da fonte*/
+    padding: 24px; /*adiciona borda do rodape*/
+    text-align: center; /*centraliza texto no meio da página*/
+}
+
+/*Ainda sobre responsividade.
+
+Vamos definir um tamanho máximo de tela para que  ela mantenha o padrão que deficinimos anteriormente, se ela for menor, então irá acontecer o seguinte ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇
+*/
+
+@media (max-width: 1449px) { /*se a tela for menor que 1449, então ficará assim ⬇⬇⬇*/
+    .cabecalho{
+        padding: 0.5em; /*espaçamento inicio, menu e imagem*/
+        padding-right: 11.5% /*adicionando padding do lado direito para centralizar o menu*/
+    }
+    .cabecalho__menu{
+        justify-content: center; /*centraliza menu*/
+    }
+
+    .imagem {
+        justify-content: center;
+        margin-bottom: -3em;
+    }
+    .apresentacao{
+        flex-direction: column-reverse; /*column reverse para posicionar a imagem em cima do texto, invetendo a ordem que o código foi escrito*/
+        justify-content: center;
+    }
+
+    .apresentacao__conteudo {
+        width: auto; /*o texto irá se ajustar ao tamanho da tela automaticamente com base no dispositivo do usuário*/
+    }
+
+    .apresentacao__card__project {
+        
+    }
+    
+
+
+
